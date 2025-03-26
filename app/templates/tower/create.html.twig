@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Create a new tower!
+{% endblock %}
+
+{% block body %}
+    {{ form_errors(towerForm) }}
+
+    {{ form_start(towerForm) }}
+    
+    {{ form_rest(towerForm) }}
+    
+    <button type="submit" class="btn">
+        Create tower
+    </button>
+
+    {{ form_end(towerForm) }}
+{% endblock %}
