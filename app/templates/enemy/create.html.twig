@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Create a new enemy!
+{% endblock %}
+
+{% block body %}
+    {{ form_errors(enemyForm) }}
+
+    {{ form_start(enemyForm) }}
+    
+    {{ form_rest(enemyForm) }}
+    
+    <button type="submit" class="btn">
+        Create enemy
+    </button>
+
+    {{ form_end(enemyForm) }}
+{% endblock %}
