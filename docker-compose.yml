@@ -32,14 +32,14 @@ services:
   db:
     image: mysql:8
     volumes:
-      - dbdata:/var/lib/mysql
+      - dbvolume:/var/lib/mysql
     env_file:
       - ./env/db.env
     networks:
       - entitiesnet
 
 volumes:
-  dbdata:
+  dbvolume:
 
 networks:
   entitiesnet:
