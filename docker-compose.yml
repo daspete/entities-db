@@ -1,0 +1,47 @@
+services:
+  nginx:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx:/etc/nginx/templates
+      - ./app:/var/www
+    networks:
+      entitiesnet:
+        aliases:
+          - entities.test
+
+  php:
+    build: 
+      context: ./docker
+    volumes:
+      - ./config/php.ini:/usr/local/etc/php/php.ini
+      - ./app:/var/www
+    networks:
+      - entitiesnet
+
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - db
+    environment:
+      PMA_HOST: db
+    networks:
+      - entitiesnet
+
+  db:
+    image: mysql:8
+    volumes:
+      - dbdata:/var/lib/mysql
+    env_file:
+      - ./env/db.env
+    networks:
+      - entitiesnet
+
+volumes:
+  dbdata:
+
+networks:
+  entitiesnet:
+    driver: bridge
+      
