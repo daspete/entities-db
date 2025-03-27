@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Create a new enemy!
+    Update the enemy!
 {% endblock %}
 
 {% block body %}
@@ -10,11 +10,11 @@
     {{ form_start(enemyForm) }}
     
     {{ form_rest(enemyForm) }}
-    
-    <input type="hidden" name="_token" value="{{ csrf_token('create_enemy') }}" />
 
+    <input type="hidden" name="_token" value="{{ csrf_token('update_enemy_' ~ enemyId) }}" />
+    
     <button type="submit" class="btn">
-        Create enemy
+        Update enemy
     </button>
 
     {{ form_end(enemyForm) }}

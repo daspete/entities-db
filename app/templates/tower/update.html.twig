@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-    Create a new tower!
+    Update the tower!
 {% endblock %}
 
 {% block body %}
@@ -10,11 +10,11 @@
     {{ form_start(towerForm) }}
     
     {{ form_rest(towerForm) }}
-
-    <input type="hidden" name="_token" value="{{ csrf_token('create_tower') }}" />
     
+    <input type="hidden" name="_token" value="{{ csrf_token('update_tower_' ~ towerId) }}" />
+
     <button type="submit" class="btn">
-        Create tower
+        Update tower
     </button>
 
     {{ form_end(towerForm) }}
