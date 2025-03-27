@@ -15,7 +15,6 @@ final class EnemyController extends AbstractController
     #[Route('/enemy', name: 'app_enemy')]
     public function index(EntityManagerInterface $entityManager): Response
     {
-        phpinfo();
         $enemyRepository = $entityManager->getRepository(Enemy::class);
 
         $enemies = $enemyRepository->findAll();
