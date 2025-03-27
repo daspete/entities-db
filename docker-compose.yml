@@ -17,6 +17,7 @@ services:
     volumes:
       - ./config/php.ini:/usr/local/etc/php/php.ini
       - ./app:/var/www
+      - ./uploads:/uploads
     networks:
       - entitiesnet
 
