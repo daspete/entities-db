@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Upload a new medium!
+{% endblock %}
+
+{% block body %}
+    {{ form_errors(mediumForm) }}
+
+    {{ form_start(mediumForm) }}
+    
+    {{ form_rest(mediumForm) }}
+    
+    <input type="hidden" name="_token" value="{{ csrf_token('create_medium') }}" />
+
+    <button type="submit" class="btn">
+        Upload medium
+    </button>
+
+    {{ form_end(mediumForm) }}
+{% endblock %}
