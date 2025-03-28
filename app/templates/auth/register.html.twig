@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Hello Login!
+{% endblock %}
+
+{% block body %}
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+
+    {{ form_rest(registrationForm) }}
+
+    <input type="hidden" name="_token" value="{{ csrf_token('registration') }}" />
+
+    <button type="submit" class="btn">
+        Register
+    </button>
+
+    {{ form_end(registrationForm) }}
+{% endblock %}
