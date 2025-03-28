@@ -1,0 +1,5 @@
+workers:
+  typescript:
+    cmd: ["symfony", "console", "typescript:build", "--watch"]
+  tailwind:
+    cmd: ["symfony", "console", "tailwind:build", "--watch"]
