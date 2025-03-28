@@ -46,3 +46,4 @@ RUN curl -sS https://get.symfony.com/cli/installer | bash
 RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
 
 EXPOSE 9000
+EXPOSE 8000
